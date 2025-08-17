@@ -24,6 +24,7 @@ async function setup(){
   imgs.gus = { gus: { atlas: imgs.gus.atlas, w:ASSETS.gus.w, h:ASSETS.gus.h, frames:ASSETS.gus.frames, fps:ASSETS.gus.fps } };
   bg = new Parallax(imgs, canvas);
   pickups = new Pickups();
+  hideFinish();  // ensure overlay is hidden on first load
 
   // input: ArrowLeft / ArrowRight = tap cadence
   window.addEventListener("keydown", (e)=>{
@@ -55,6 +56,7 @@ function reset(){
   camX = 0;
   pickups.reset();
   finished=false;
+  hideFinish();  // hide if it was left open
 }
 
 let lastTs = 0, acc = 0;
