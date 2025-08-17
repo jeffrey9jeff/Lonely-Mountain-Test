@@ -11,7 +11,7 @@ html, body { height: 100%; margin: 0; background:#0b1221; color:#e9f1ff; font: 1
 .bar > div { height:100%; width:0%; background:#39c0ba; }
 
 #finish { position:fixed; inset:0; background:rgba(0,0,0,.6); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; }
-.hidden{ display:none; }
+.hidden{ display:none !important; }
 #finish h1 { margin:0 0 6px; }
 #finish button { padding:8px 12px; border-radius:8px; border:1px solid #5b7bd3; background:#2c3e67; color:#fff; cursor:pointer; }
 
