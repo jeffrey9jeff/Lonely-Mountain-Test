@@ -6,6 +6,15 @@ import { COURSE } from "./config.js";
 import { updateHUD, showFinish, hideFinish, fmtTime } from "./hud.js";
 import { submitLocal, submitRemoteIfConfigured, renderLB } from "./leaderboard.js";
 
+// Hide finish overlay on boot (safeguard against stuck overlay)
+window.addEventListener("load", () => {
+  const finishOverlay = document.getElementById("finish-overlay");
+  if (finishOverlay) {
+    finishOverlay.style.display = "none";
+  }
+});
+
+
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
