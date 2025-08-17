@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gus the Trail Runner — Arcade Time Trial</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <!-- HUD -->
+  <div id="hud">
+    <div class="left">
+      <div>Time: <span id="time">00:00.000</span></div>
+      <div>Dist: <span id="dist">0</span> m</div>
+    </div>
+    <div class="center">
+      <div>SR <span id="sr">0</span> / HR <span id="hr">0</span></div>
+      <div class="bars">
+        <div class="bar" id="srBar"><div></div></div>
+        <div class="bar" id="hrBar"><div></div></div>
+      </div>
+    </div>
+    <div class="right">
+      <div>Gels: <span id="gels">0</span> <span class="emoji">🧃</span></div>
+      <div>Beers: <span id="beers">0</span> <span class="emoji">🍺</span></div>
+    </div>
+  </div>
+
+  <!-- Finish overlay -->
+  <div id="finish" class="hidden">
+    <h1>Finish!</h1>
+    <p>Your time: <span id="finishTime"></span></p>
+    <label>
+      Name:
+      <input id="nick" maxlength="16" placeholder="GusFan" />
+    </label>
+    <button id="submitRun">Submit to Leaderboard</button>
+    <button id="restart">Run Again</button>
+  </div>
+
+  <!-- Leaderboard panel -->
+  <div id="board">
+    <h2>Leaderboard — Arcade (RR_v1_arcade_standard)</h2>
+    <table id="lb">
+      <thead><tr><th>#</th><th>Name</th><th>Time</th><th>Gels</th><th>Beers</th><th>Route</th><th>Date</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
